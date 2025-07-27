@@ -18,6 +18,18 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
             background-size: 2rem 2rem;
         }
+        /* Styles for the Back to Top button */
+        #to-top-button {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        #to-top-button:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -32,7 +44,6 @@
                 <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-300">Experience</a>
                 <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
                 <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-300">Skills</a>
-                <!-- UPDATED: Changed href to scroll to the contact section -->
                 <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow" aria-label="Go to contact section">Contact Me</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none" aria-label="Toggle mobile menu">
@@ -292,13 +303,29 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
                 <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <p class="text-gray-300 mb-8">
-                            I'm currently open to new opportunities and collaborations. If you have a project in mind, a question, or just want to say hi, please feel free to reach out!
+                    <!-- UPDATED: Replaced email link with a contact form -->
+                    <div class="md:w-1/2">
+                        <p class="text-gray-300 mb-8 text-center md:text-left">
+                            I'm currently open to new opportunities and collaborations. Fill out the form below or email me directly.
                         </p>
-                        <a href="mailto:sunil.k@iitgn.ac.in" class="inline-block bg-indigo-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition duration-300 transform hover:scale-105 shadow-lg">
-                            Email Me
-                        </a>
+                        <!-- IMPORTANT: Replace the action URL with your own Formspree endpoint -->
+                        <form action="https://formspree.io/f/your_unique_id" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Your Name</label>
+                                <input type="text" name="name" id="name" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Your Email</label>
+                                <input type="email" name="email" id="email" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-300">Your Message</label>
+                                <textarea name="message" id="message" rows="4" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                            </div>
+                            <button type="submit" class="inline-block bg-indigo-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition duration-300 transform hover:scale-105 shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                     <div class="md:w-1/2 text-center md:text-left">
                         <div class="space-y-4 text-gray-300">
@@ -342,6 +369,11 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" id="to-top-button" class="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700" aria-label="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
     <script>
         // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -378,6 +410,17 @@
             
             shareLink.href = `mailto:?subject=${subject}&body=${body}`;
         });
+
+        // --- Back to Top Button Logic ---
+        const toTopButton = document.getElementById('to-top-button');
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        };
     </script>
 </body>
 </html>
