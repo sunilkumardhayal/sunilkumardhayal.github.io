@@ -22,6 +22,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
+    <!-- Header Section -->
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900">Sunil Kumar</a>
@@ -31,12 +32,14 @@
                 <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-300">Experience</a>
                 <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
                 <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-300">Skills</a>
-                <a href="mailto:sunil.k@iitgn.ac.in" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow" aria-label="Contact me via email">Contact Me</a>
+                <!-- UPDATED: Changed href to scroll to the contact section -->
+                <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow" aria-label="Go to contact section">Contact Me</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none" aria-label="Toggle mobile menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4"x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
         </div>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About</a>
             <a href="#education" class="block py-2 text-gray-600 hover:text-indigo-600">Education</a>
@@ -48,6 +51,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero-bg text-white py-20 md:py-32">
             <div class="container mx-auto px-6 text-center">
                 <img src="https://github.com/sunilkumardhayal/sunilkumardhayal.github.io/blob/main/profile.jpg?raw=true" alt="Sunil Kumar Profile Picture" class="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-4 border-white/20 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/128x128/FFFFFF/333333?text=SK';">
@@ -57,6 +61,7 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
@@ -85,6 +90,7 @@
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
@@ -125,6 +131,7 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
         <section id="experience" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
@@ -154,6 +161,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">My Research & Projects</h2>
@@ -166,7 +174,7 @@
                             <p class="text-gray-600 mb-2 flex-grow">Investigating the complex fluid dynamics of vortex drop shafts using experimental methods and advanced numerical modeling (CFD).</p>
                              <p class="text-sm text-gray-500 mb-4">Ongoing</p>
                             <div class="mt-auto">
-                               <a href="#about" class="text-indigo-600 hover:underline font-semibold">Read About Me &rarr;</a>
+                                <a href="#about" class="text-indigo-600 hover:underline font-semibold">Read About Me &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -226,6 +234,7 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
@@ -278,6 +287,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-gray-800 text-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
@@ -311,11 +321,12 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://www.researchgate.net/profile/Sunil-Kumar-630?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300" title="ResearchGate">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12.18,10.15l-1.63,0,0,5.37,1.13,0a2,2,0,0,0,1.8-2.12A2.07,2.07,0,0,0,12.18,10.15ZM7.71,15.52,7.71,8.48l1.63,0a4.13,4.13,0,0,1,3.29,4.24A4.13,4.13,0,0,1,9.34,17l-1.63,0V15.52Z M7.71,8.48,5.43,8.48,5.43,17l2.28,0V15.52"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12.18,10.15l-1.63,0,0,5.37,1.13,0a2,2,0,0,0,1.8-2.12A2.07,2.07,0,0,0,12.18,10.15ZM7.71,15.52,7.71,8.48l1.63,0a4.13,4.13,0,0,1,3.29,4.24A4.13,4.13,0,0,1,9.34,17l-1.63,0V15.52Z M7.71,8.48,5.43,8.48,5.43,17l2.28,0V15.52Z"/></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/sunil-kumar-iitp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300" title="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
