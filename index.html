@@ -803,36 +803,32 @@
         const contactFormModal = document.getElementById('contact-form-modal');
         contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
 
-        // --- Modal Toggle Logic ---
+// --- Modal Toggle Logic (Fixed) ---
         const openModalBtn = document.getElementById('open-contact-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const contactModal = document.getElementById('contact-modal');
 
-        // 1. Open Modal (with stopPropagation to prevent immediate closing)
+        // 1. Open Modal - We use 'stopPropagation' to prevent immediate closing
         openModalBtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // This stops the click from triggering the document listener below
+            event.stopPropagation(); // <--- THIS STOPS THE BUG
             contactModal.classList.remove('hidden');
         });
 
-        // 2. Close Modal (X button)
+        // 2. Close Modal - When clicking the 'X' button
         closeModalBtn.addEventListener('click', () => {
             contactModal.classList.add('hidden');
         });
 
-        // 3. Close Modal (Click Outside)
+        // 3. Close Modal - When clicking outside
         document.addEventListener('click', (event) => {
-            const isModalOpen = !contactModal.classList.contains('hidden');
-            const isClickInside = contactModal.contains(event.target);
+            const isClickInsideModal = contactModal.contains(event.target);
+            const isModalHidden = contactModal.classList.contains('hidden');
 
-            // If modal is open AND click is NOT inside the modal, close it
-            if (isModalOpen && !isClickInside) {
+            // If the modal is OPEN and the click is OUTSIDE, close it.
+            if (!isModalHidden && !isClickInsideModal) {
                 contactModal.classList.add('hidden');
             }
         });
-        
-        // Note: We use 'click' event, so scrolling will NOT close the modal, as you requested.
-        
-
         // --- Active Nav Link on Scroll ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
@@ -863,6 +859,7 @@
     </script>
 </body>
 </html>
+
 
 
 
