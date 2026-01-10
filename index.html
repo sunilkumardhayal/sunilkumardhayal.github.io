@@ -629,7 +629,9 @@
         <p>&copy; <span id="current-year"></span> Sunil Kumar. All rights reserved.</p>
     </div>
 </footer>
-<div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
+
+
+    <div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
         
         <button id="open-contact-modal" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 font-semibold flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
@@ -640,17 +642,16 @@
 
         <div class="flex gap-2 w-full">
             <a href="Sunil_CV.pdf" target="_blank" class="flex-grow bg-blue-600 text-white px-3 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 font-semibold flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                CV
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
-                CV
             </a>
             
-            <a href="#home" id="to-top-button" class="flex-none bg-indigo-600 text-white p-2.5 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center" aria-label="Go to top">
+            <a href="#home" class="flex-none bg-indigo-600 text-white w-10 h-10 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center" aria-label="Go to top">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
-
     </div>
 
     <div id="contact-modal" class="fixed bottom-4 right-4 z-[60] hidden">
@@ -694,7 +695,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Smooth Scrolling & Close Mobile Menu on Click ---
+        // --- Smooth Scrolling ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href').length > 1) {
@@ -715,15 +716,15 @@
         // --- Floating Buttons Visibility on Scroll ---
         const floatingActions = document.getElementById('floating-actions');
         
-        window.onscroll = function() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                // Show buttons
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                // Show buttons (Make opaque and clickable)
                 floatingActions.classList.remove('opacity-0', 'pointer-events-none');
             } else {
                 // Hide buttons
                 floatingActions.classList.add('opacity-0', 'pointer-events-none');
             }
-        };
+        });
 
         // --- Animate on Scroll ---
         const observer = new IntersectionObserver((entries) => {
@@ -775,15 +776,9 @@
                         }
                     }, 2000); 
                 } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Oops! There was a problem submitting your form');
-                        }
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = originalButtonText;
-                    })
+                    alert('Oops! There was a problem submitting your form');
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
                 }
             } catch (error) {
                 alert('Oops! There was a problem submitting your form');
@@ -794,24 +789,28 @@
 
         // --- Form Event Listeners ---
         const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener("submit", (e) => handleFormSubmit(e, 'success-message'));
+        if(contactForm) contactForm.addEventListener("submit", (e) => handleFormSubmit(e, 'success-message'));
 
         const contactFormModal = document.getElementById('contact-form-modal');
-        contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
+        if(contactFormModal) contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
 
         // --- Modal Toggle Logic ---
         const openModalBtn = document.getElementById('open-contact-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const contactModal = document.getElementById('contact-modal');
 
-        openModalBtn.addEventListener('click', () => {
-            contactModal.classList.remove('hidden');
-        });
+        if(openModalBtn) {
+            openModalBtn.addEventListener('click', () => {
+                contactModal.classList.remove('hidden');
+            });
+        }
 
-        closeModalBtn.addEventListener('click', () => {
-            contactModal.classList.add('hidden');
-        });
-
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                contactModal.classList.add('hidden');
+            });
+        }
+        
         // --- Active Nav Link on Scroll ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
@@ -837,7 +836,4 @@
             window.addEventListener('scroll', activateNavLink);
             activateNavLink(); 
         });
-
     </script>
-</body>
-</html>
