@@ -631,7 +631,7 @@
 </footer>
 
 
-    <div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
+   <div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
         
         <button id="open-contact-modal" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 font-semibold flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
@@ -642,198 +642,16 @@
 
         <div class="flex gap-2 w-full">
             <a href="Sunil_CV.pdf" target="_blank" class="flex-grow bg-blue-600 text-white px-3 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 font-semibold flex items-center justify-center gap-2">
-                CV
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
+                CV
             </a>
             
-            <a href="#home" class="flex-none bg-indigo-600 text-white w-10 h-10 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center" aria-label="Go to top">
+            <a href="#home" id="to-top-button" class="flex-none bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center" aria-label="Go to top">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
+
     </div>
 
-    <div id="contact-modal" class="fixed bottom-4 right-4 z-[60] hidden">
-        <div class="bg-white rounded-lg shadow-2xl border border-gray-200 p-6 w-80 relative animate-fade-in">
-            <button id="close-modal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h2 class="text-xl font-bold mb-4 text-gray-800">Contact Me</h2>
-            <form id="contact-form-modal" action="https://formspree.io/f/xeozkqky" method="POST" class="space-y-3">
-                <div>
-                    <label for="modal-name" class="block mb-1 text-sm font-medium text-gray-700">Your Name</label>
-                    <input type="text" name="name" id="modal-name" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
-                </div>
-                <div>
-                    <label for="modal-email" class="block mb-1 text-sm font-medium text-gray-700">Your Email</label>
-                    <input type="email" name="email" id="modal-email" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
-                </div>
-                <div>
-                    <label for="modal-message" class="block mb-1 text-sm font-medium text-gray-700">Your Message</label>
-                    <textarea name="message" id="modal-message" rows="3" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition duration-300 shadow-md">
-                    Send Message
-                </button>
-            </form>
-             <div id="modal-success-message" class="hidden text-center p-3 bg-green-100 text-green-800 rounded-lg mt-3 text-sm">
-                <h3 class="font-semibold">Thanks!</h3>
-                <p>Message sent successfully.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- Smooth Scrolling ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href').length > 1) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-
-        // --- Dynamic Year for Footer ---
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // --- Floating Buttons Visibility on Scroll ---
-        const floatingActions = document.getElementById('floating-actions');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                // Show buttons (Make opaque and clickable)
-                floatingActions.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                // Hide buttons
-                floatingActions.classList.add('opacity-0', 'pointer-events-none');
-            }
-        });
-
-        // --- Animate on Scroll ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        });
-
-        const elementsToAnimate = document.querySelectorAll('.fade-in-element');
-        elementsToAnimate.forEach((el) => observer.observe(el));
-
-        // --- Helper Function for Form Submission ---
-        async function handleFormSubmit(event, successMsgId) {
-            event.preventDefault();
-            const form = event.target;
-            const data = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
-            const successMessage = document.getElementById(successMsgId);
-
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Sending...';
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                        form.style.display = 'block';
-                        form.reset();
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = originalButtonText;
-                        
-                        // Close modal after success
-                        if (form.id === 'contact-form-modal') {
-                             document.getElementById('contact-modal').classList.add('hidden');
-                        }
-                    }, 2000); 
-                } else {
-                    alert('Oops! There was a problem submitting your form');
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalButtonText;
-                }
-            } catch (error) {
-                alert('Oops! There was a problem submitting your form');
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
-            }
-        }
-
-        // --- Form Event Listeners ---
-        const contactForm = document.getElementById('contact-form');
-        if(contactForm) contactForm.addEventListener("submit", (e) => handleFormSubmit(e, 'success-message'));
-
-        const contactFormModal = document.getElementById('contact-form-modal');
-        if(contactFormModal) contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
-
-        // --- Modal Toggle Logic ---
-        const openModalBtn = document.getElementById('open-contact-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const contactModal = document.getElementById('contact-modal');
-
-        if(openModalBtn) {
-            openModalBtn.addEventListener('click', () => {
-                contactModal.classList.remove('hidden');
-            });
-        }
-
-        if(closeModalBtn) {
-            closeModalBtn.addEventListener('click', () => {
-                contactModal.classList.add('hidden');
-            });
-        }
-        
-        // --- Active Nav Link on Scroll ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
-            
-            const activateNavLink = () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - window.innerHeight / 4) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('nav-active');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('nav-active');
-                    }
-                });
-            };
-            
-            window.addEventListener('scroll', activateNavLink);
-            activateNavLink(); 
-        });
-    </script>
