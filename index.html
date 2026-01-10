@@ -648,34 +648,34 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </a>
 
-    <div id="contact-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center z-[60] px-4">
-        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md relative animate-fade-in">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div id="contact-modal" class="fixed bottom-4 right-4 z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl border border-gray-200 p-6 w-80 relative animate-fade-in">
+            <button id="close-modal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">Contact Me</h2>
-            <form id="contact-form-modal" action="https://formspree.io/f/xeozkqky" method="POST" class="space-y-4">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Contact Me</h2>
+            <form id="contact-form-modal" action="https://formspree.io/f/xeozkqky" method="POST" class="space-y-3">
                 <div>
-                    <label for="modal-name" class="block mb-2 text-sm font-medium text-gray-700">Your Name</label>
-                    <input type="text" name="name" id="modal-name" class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                    <label for="modal-name" class="block mb-1 text-sm font-medium text-gray-700">Your Name</label>
+                    <input type="text" name="name" id="modal-name" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
                 </div>
                 <div>
-                    <label for="modal-email" class="block mb-2 text-sm font-medium text-gray-700">Your Email</label>
-                    <input type="email" name="email" id="modal-email" class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
+                    <label for="modal-email" class="block mb-1 text-sm font-medium text-gray-700">Your Email</label>
+                    <input type="email" name="email" id="modal-email" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required>
                 </div>
                 <div>
-                    <label for="modal-message" class="block mb-2 text-sm font-medium text-gray-700">Your Message</label>
-                    <textarea name="message" id="modal-message" rows="4" class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                    <label for="modal-message" class="block mb-1 text-sm font-medium text-gray-700">Your Message</label>
+                    <textarea name="message" id="modal-message" rows="3" class="w-full p-2 text-sm bg-gray-50 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
                 </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 shadow-lg">
+                <button type="submit" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition duration-300 shadow-md">
                     Send Message
                 </button>
             </form>
-             <div id="modal-success-message" class="hidden text-center p-4 bg-green-100 text-green-800 rounded-lg mt-4">
-                <h3 class="font-semibold text-lg">Thanks!</h3>
-                <p>Your message has been submitted successfully.</p>
+             <div id="modal-success-message" class="hidden text-center p-3 bg-green-100 text-green-800 rounded-lg mt-3 text-sm">
+                <h3 class="font-semibold">Thanks!</h3>
+                <p>Message sent successfully.</p>
             </div>
         </div>
     </div>
@@ -765,7 +765,6 @@
                         // If it's the modal form, also close the modal after success
                         if (form.id === 'contact-form-modal') {
                              document.getElementById('contact-modal').classList.add('hidden');
-                             document.getElementById('contact-modal').classList.remove('flex');
                         }
                     }, 2000); 
                 } else {
@@ -790,31 +789,25 @@
         const contactForm = document.getElementById('contact-form');
         contactForm.addEventListener("submit", (e) => handleFormSubmit(e, 'success-message'));
 
-        // --- Modal Logic ---
+        // --- Modal Logic (Updated for Widget Style) ---
         const openModalBtn = document.getElementById('open-contact-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const contactModal = document.getElementById('contact-modal');
         const contactFormModal = document.getElementById('contact-form-modal');
 
-        // Open Modal
+        // Open Modal (Simple Toggle)
         openModalBtn.addEventListener('click', () => {
             contactModal.classList.remove('hidden');
-            contactModal.classList.add('flex'); // Use flex to center content
+            // Removed 'flex' addition because we are just unhiding a fixed position block
         });
 
         // Close Modal
         closeModalBtn.addEventListener('click', () => {
             contactModal.classList.add('hidden');
-            contactModal.classList.remove('flex');
         });
 
-        // Close Modal on Click Outside
-        contactModal.addEventListener('click', (e) => {
-            if (e.target === contactModal) {
-                contactModal.classList.add('hidden');
-                contactModal.classList.remove('flex');
-            }
-        });
+        // REMOVED: "Close Modal on Click Outside" logic.
+        // This allows the user to scroll and interact with the page while the form is open.
 
         // Modal Form Submission
         contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
