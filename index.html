@@ -815,7 +815,22 @@
         closeModalBtn.addEventListener('click', () => {
             contactModal.classList.add('hidden');
         });
+// --- Click Outside to Close Modal Logic ---
+        document.addEventListener('click', (event) => {
+            const modal = document.getElementById('contact-modal');
+            const openBtn = document.getElementById('open-contact-modal');
+            
+            // Check if the modal is currently visible
+            if (!modal.classList.contains('hidden')) {
+                const isClickInsideModal = modal.contains(event.target);
+                const isClickOnOpenBtn = openBtn.contains(event.target);
 
+                // If click is NOT inside modal AND NOT on the open button, close it.
+                if (!isClickInsideModal && !isClickOnOpenBtn) {
+                    modal.classList.add('hidden');
+                }
+            }
+        });
         // --- Active Nav Link on Scroll ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
@@ -846,6 +861,7 @@
     </script>
 </body>
 </html>
+
 
 
 
