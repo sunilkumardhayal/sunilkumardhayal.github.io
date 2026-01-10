@@ -803,32 +803,45 @@
         const contactFormModal = document.getElementById('contact-form-modal');
         contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
 
-// --- Modal Toggle Logic (Fixed) ---
+// --- Modal Toggle Logic (with 1-second safety delay) ---
         const openModalBtn = document.getElementById('open-contact-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const contactModal = document.getElementById('contact-modal');
+        
+        let modalOpenTime = 0; // Stores the timestamp when the modal is opened
 
-        // 1. Open Modal - We use 'stopPropagation' to prevent immediate closing
-        openModalBtn.addEventListener('click', (event) => {
-            event.stopPropagation(); // <--- THIS STOPS THE BUG
+        // 1. Open Modal
+        openModalBtn.addEventListener('click', () => {
             contactModal.classList.remove('hidden');
+            modalOpenTime = Date.now(); // Capture the exact time we opened it
         });
 
-        // 2. Close Modal - When clicking the 'X' button
+        // 2. Close Modal (X button) - Always works immediately
         closeModalBtn.addEventListener('click', () => {
             contactModal.classList.add('hidden');
         });
 
-        // 3. Close Modal - When clicking outside
+        // 3. Close Modal (Click Outside)
         document.addEventListener('click', (event) => {
-            const isClickInsideModal = contactModal.contains(event.target);
-            const isModalHidden = contactModal.classList.contains('hidden');
+            // If the modal is already closed, do nothing
+            if (contactModal.classList.contains('hidden')) return;
 
-            // If the modal is OPEN and the click is OUTSIDE, close it.
-            if (!isModalHidden && !isClickInsideModal) {
+            const isClickInsideModal = contactModal.contains(event.target);
+            const isClickOnOpenBtn = openModalBtn.contains(event.target);
+            
+            // Calculate how many milliseconds have passed since it opened
+            const timeSinceOpen = Date.now() - modalOpenTime;
+
+            // CONDITION: Close ONLY if:
+            // 1. Click is OUTSIDE the modal
+            // 2. Click is NOT on the open button
+            // 3. It has been MORE than 1000ms (1 second) since opening
+            if (!isClickInsideModal && !isClickOnOpenBtn && timeSinceOpen > 1000) {
                 contactModal.classList.add('hidden');
             }
         });
+        
+
         // --- Active Nav Link on Scroll ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
@@ -859,6 +872,7 @@
     </script>
 </body>
 </html>
+
 
 
 
