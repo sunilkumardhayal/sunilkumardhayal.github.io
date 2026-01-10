@@ -630,13 +630,13 @@
     </div>
 </footer>
 
-    <button id="open-contact-modal" class="fixed bottom-24 right-24 z-50 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 font-semibold flex items-center gap-2">
+<button id="open-contact-modal" class="fixed bottom-24 right-24 z-50 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 font-semibold flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12.375m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
         </svg>
         Contact Me
     </button>
-    
+
     <a href="Sunil_CV.pdf" download class="fixed bottom-8 right-24 z-50 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 font-semibold flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -679,7 +679,6 @@
             </div>
         </div>
     </div>
-    
 
     <script>
         // --- Mobile Menu Toggle ---
@@ -708,16 +707,6 @@
         // --- Dynamic Year for Footer ---
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // --- Dynamic Share via Email Link ---
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const shareLink = document.getElementById('share-email-link');
-            const pageUrl = window.location.href;
-            const subject = encodeURIComponent("Check out Sunil Kumar's Portfolio");
-            const body = encodeURIComponent(`Hi,\n\nI thought you might be interested in this professional portfolio for Sunil Kumar, a PhD scholar at IIT Gandhinagar:\n\n${pageUrl}\n\nBest regards,`);
-            
-            shareLink.href = `mailto:?subject=${subject}&body=${body}`;
-        });
-
         // --- Back to Top Button Logic ---
         const toTopButton = document.getElementById('to-top-button');
         
@@ -741,16 +730,14 @@
         const elementsToAnimate = document.querySelectorAll('.fade-in-element');
         elementsToAnimate.forEach((el) => observer.observe(el));
 
-        // --- Contact Form AJAX Submission ---
-        const contactForm = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
-
-        async function handleSubmit(event) {
+        // --- Helper Function for Form Submission (Reusable) ---
+        async function handleFormSubmit(event, successMsgId) {
             event.preventDefault();
             const form = event.target;
             const data = new FormData(form);
             const submitButton = form.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
+            const successMessage = document.getElementById(successMsgId);
 
             submitButton.disabled = true;
             submitButton.innerHTML = 'Sending...';
@@ -774,6 +761,12 @@
                         form.reset();
                         submitButton.disabled = false;
                         submitButton.innerHTML = originalButtonText;
+                        
+                        // If it's the modal form, also close the modal after success
+                        if (form.id === 'contact-form-modal') {
+                             document.getElementById('contact-modal').classList.add('hidden');
+                             document.getElementById('contact-modal').classList.remove('flex');
+                        }
                     }, 2000); 
                 } else {
                     response.json().then(data => {
@@ -793,9 +786,41 @@
             }
         }
 
-        contactForm.addEventListener("submit", handleSubmit);
+        // --- Main Contact Form Submission ---
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener("submit", (e) => handleFormSubmit(e, 'success-message'));
+
+        // --- Modal Logic ---
+        const openModalBtn = document.getElementById('open-contact-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const contactModal = document.getElementById('contact-modal');
+        const contactFormModal = document.getElementById('contact-form-modal');
+
+        // Open Modal
+        openModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('hidden');
+            contactModal.classList.add('flex'); // Use flex to center content
+        });
+
+        // Close Modal
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.classList.add('hidden');
+            contactModal.classList.remove('flex');
+        });
+
+        // Close Modal on Click Outside
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.add('hidden');
+                contactModal.classList.remove('flex');
+            }
+        });
+
+        // Modal Form Submission
+        contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
+
         
-        // --- Active Nav Link on Scroll (Added) ---
+        // --- Active Nav Link on Scroll ---
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
@@ -825,4 +850,3 @@
     </script>
 </body>
 </html>
-
