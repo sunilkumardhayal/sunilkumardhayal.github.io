@@ -803,7 +803,34 @@
         const contactFormModal = document.getElementById('contact-form-modal');
         contactFormModal.addEventListener("submit", (e) => handleFormSubmit(e, 'modal-success-message'));
 
+        // --- Modal Toggle Logic ---
+        const openModalBtn = document.getElementById('open-contact-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const contactModal = document.getElementById('contact-modal');
 
+        // 1. Open Modal (with stopPropagation to prevent immediate closing)
+        openModalBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // This stops the click from triggering the document listener below
+            contactModal.classList.remove('hidden');
+        });
+
+        // 2. Close Modal (X button)
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.classList.add('hidden');
+        });
+
+        // 3. Close Modal (Click Outside)
+        document.addEventListener('click', (event) => {
+            const isModalOpen = !contactModal.classList.contains('hidden');
+            const isClickInside = contactModal.contains(event.target);
+
+            // If modal is open AND click is NOT inside the modal, close it
+            if (isModalOpen && !isClickInside) {
+                contactModal.classList.add('hidden');
+            }
+        });
+        
+        // Note: We use 'click' event, so scrolling will NOT close the modal, as you requested.
         
 
         // --- Active Nav Link on Scroll ---
