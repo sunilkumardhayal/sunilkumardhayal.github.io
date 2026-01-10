@@ -630,7 +630,7 @@
     </div>
 </footer>
 
-<div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="floating-actions" class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 w-48 opacity-0 pointer-events-none transition-opacity duration-300">
         
         <button id="open-contact-modal" class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 font-semibold flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
@@ -647,12 +647,15 @@
                 CV
             </a>
             
-            <a href="#home" id="to-top-button" class="flex-none bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300" aria-label="Go to top">
+            <a href="#home" id="to-top-button" style="display: block; position: static;" class="flex-none bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300" aria-label="Go to top">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
 
     </div>
+
+    
+
 
     <div id="contact-modal" class="fixed bottom-4 right-4 z-[60] hidden">
         <div class="bg-white rounded-lg shadow-2xl border border-gray-200 p-6 w-80 relative animate-fade-in">
@@ -843,4 +846,5 @@
     </script>
 </body>
 </html>
+
 
