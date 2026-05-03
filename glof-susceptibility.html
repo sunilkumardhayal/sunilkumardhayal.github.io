@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GLOF susceptibility mapping project by Sunil Kumar using remote sensing, GIS, and machine learning across major Himalayan river basins.">
+    <link rel="canonical" href="https://sunilkumardhayal.github.io/glof-susceptibility.html">
+    <meta property="og:title" content="GLOF Susceptibility Mapping - Sunil Kumar">
+    <meta property="og:description" content="Remote sensing, GIS, and machine learning study of glacial lake outburst flood susceptibility across Indus, Ganga, and Brahmaputra river basins.">
+    <meta property="og:image" content="https://sunilkumardhayal.github.io/assets/glof/glof-hero-collage.jpg">
+    <meta property="og:url" content="https://sunilkumardhayal.github.io/glof-susceptibility.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GLOF Susceptibility Mapping - Sunil Kumar">
+    <meta name="twitter:description" content="GLOF susceptibility mapping across Himalayan river basins using remote sensing, GIS, and machine learning.">
+    <meta name="twitter:image" content="https://sunilkumardhayal.github.io/assets/glof/glof-hero-collage.jpg">
+    <title>GLOF Susceptibility Mapping - Sunil Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="index.html#home" class="text-xl sm:text-2xl font-bold text-gray-900">Sunil Kumar</a>
+            <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition">About</a>
+                <a href="index.html#projects" class="text-gray-600 hover:text-indigo-600 transition">Projects</a>
+                <a href="index.html#skills" class="text-gray-600 hover:text-indigo-600 transition">Skills</a>
+                <a href="index.html#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition shadow">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="text-white py-10 md:py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(5, 10, 25, 0.78), rgba(5, 10, 25, 0.82)), url('assets/glof/glof-hero-collage.jpg');">
+            <div class="container mx-auto px-4 sm:px-6">
+                <p class="text-teal-300 font-semibold mb-3">CE605 Remote Sensing of Land and Water Resources, 2026</p>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold max-w-5xl leading-tight mb-5">Assessment of GLOF Susceptibility Across Major Himalayan River Basins</h1>
+                <p class="text-lg text-gray-300 max-w-4xl mb-6">A remote sensing and machine learning study for mapping glacial lake outburst flood susceptibility across the Indus, Ganga, and Brahmaputra river basins.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                    <a href="https://iitgn.ac.in/faculty/civil/fac-vimal" target="_blank" rel="noopener noreferrer" class="bg-white/10 border border-white/20 px-3 py-1 rounded-full hover:bg-white/20 transition">Guided by: Prof. Vimal Mishra</a>
+                    <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">Sunil Kumar and team</span>
+                    <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">17 April 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Project Overview</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">The project examined how glaciological, topographical, and climatic controls influence glacial lake outburst flood susceptibility across major Himalayan basins. It combined multi-source remote sensing data with a machine learning framework to classify and map basin-wise susceptibility patterns.</p>
+                    <p class="text-gray-600 leading-relaxed">The analysis focused on lake dynamics, glacier proximity, topography, rainfall, temperature, and freeze-thaw indicators, with the final output designed to support prioritization of potentially hazardous glacial lakes.</p>
+                </div>
+                <aside class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-4">Study Scale</h3>
+                    <dl class="space-y-3 text-sm">
+                        <div>
+                            <dt class="text-gray-500">Total glacial lakes assessed</dt>
+                            <dd class="font-semibold text-gray-900">19,284</dd>
+                        </div>
+                        <div>
+                            <dt class="text-gray-500">Major basins</dt>
+                            <dd class="font-semibold text-gray-900">Indus, Ganga, Brahmaputra</dd>
+                        </div>
+                        <div>
+                            <dt class="text-gray-500">Lakes greater than 5 ha</dt>
+                            <dd class="font-semibold text-gray-900">4,984</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Data And Method</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Lake Dynamics</h3>
+                        <p class="text-sm text-gray-600">Sentinel-1 SAR lake area, lake expansion, and shape indicators.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Topography</h3>
+                        <p class="text-sm text-gray-600">ALOS World 3D DEM, elevation gradients, terrain slope, aspect, and relief.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Climate</h3>
+                        <p class="text-sm text-gray-600">CHIRPS rainfall and CPC/MODIS temperature indicators, including extremes.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Machine Learning</h3>
+                        <p class="text-sm text-gray-600">Basin-wise modelling with XGBoost-style susceptibility prediction and validation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Basin Maps</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/indus-basin-dem.png" alt="Indus River Basin DEM and drainage network" class="w-full h-64 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Indus River Basin DEM and drainage network.</figcaption>
+                    </figure>
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/ganga-basin-dem.png" alt="Ganga River Basin DEM and drainage network" class="w-full h-64 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Ganga River Basin DEM and drainage network.</figcaption>
+                    </figure>
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/brahmaputra-basin-dem.png" alt="Brahmaputra River Basin DEM and drainage network" class="w-full h-64 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra River Basin DEM and drainage network.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-5">Key Results</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>Developed basin-wise GLOF susceptibility maps using remote sensing and machine learning.</li>
+                        <li>Model performance was strong across basins, with R2 values approximately between 0.75 and 0.91.</li>
+                        <li>Lake area change and glacier proximity emerged as dominant drivers across all basins.</li>
+                        <li>Trend-based modelling supported prioritization of potentially hazardous glacial lakes.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-5">Basin-Specific Controls</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h3 class="font-semibold text-gray-900">Indus</h3>
+                            <p class="text-sm text-gray-600 mt-1">Rainfall and freeze conditions were important drivers.</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h3 class="font-semibold text-gray-900">Brahmaputra</h3>
+                            <p class="text-sm text-gray-600 mt-1">Temperature and thaw dynamics showed strong influence.</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-5">
+                            <h3 class="font-semibold text-gray-900">Ganga</h3>
+                            <p class="text-sm text-gray-600 mt-1">Elevation and freeze conditions were key basin-specific controls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Susceptibility Outputs</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/indus-susceptibility-map.png" alt="Indus Basin glacial lake susceptibility map" class="w-full h-80 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Indus Basin susceptibility map showing classified glacial lakes from low to very high susceptibility.</figcaption>
+                    </figure>
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/ganga-susceptibility-map.png" alt="Ganga Basin glacial lake susceptibility map" class="w-full h-80 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Ganga Basin susceptibility map linking lake expansion risk with elevation, freeze conditions, and terrain controls.</figcaption>
+                    </figure>
+                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/brahmaputra-susceptibility-map.png" alt="Brahmaputra Basin glacial lake susceptibility map" class="w-full h-80 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra Basin susceptibility map highlighting spatial clusters of potentially hazardous glacial lakes.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Model Evidence</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-3">Indus Basin</h3>
+                        <p class="text-sm text-gray-600">Validation R2: 0.847</p>
+                        <p class="text-sm text-gray-600">Test R2: 0.867</p>
+                        <p class="text-sm text-gray-600 mt-3">Important controls included area trend, glacier proximity, slope, freeze trend, thaw trend, and rainfall trend.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-3">Brahmaputra Basin</h3>
+                        <p class="text-sm text-gray-600">Validation R2: 0.906</p>
+                        <p class="text-sm text-gray-600">Test R2: 0.820</p>
+                        <p class="text-sm text-gray-600 mt-3">Important controls included area change, glacier proximity, slope, thaw dynamics, temperature trend, and rainfall trend.</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-5">
+                        <h3 class="font-semibold text-gray-900 mb-3">Ganga Basin</h3>
+                        <p class="text-sm text-gray-600">Validation R2: 0.822</p>
+                        <p class="text-sm text-gray-600">Test R2: 0.748</p>
+                        <p class="text-sm text-gray-600 mt-3">Important controls included area change, glacier proximity, elevation, terrain slope, freeze conditions, and thaw dynamics.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/indus-validation-observed-predicted.png" alt="Observed versus predicted lake area validation plot for the Indus Basin model" class="w-full h-72 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Validation lake-area series comparing observed and predicted glacial lake area.</figcaption>
+                    </figure>
+                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/indus-testing-observed-predicted.png" alt="Observed versus predicted lake area testing plot for the Indus Basin model" class="w-full h-72 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Testing lake-area series used as an independent check on model performance.</figcaption>
+                    </figure>
+                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/indus-feature-importance.png" alt="Feature importance chart for the Indus Basin model" class="w-full h-72 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Indus feature importance showing lake-area history as a dominant predictor.</figcaption>
+                    </figure>
+                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/ganga-feature-importance.png" alt="Feature importance chart for the Ganga Basin model" class="w-full h-72 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Ganga feature importance showing the combined effect of lake area, seasonality, and terrain variables.</figcaption>
+                    </figure>
+                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/glof/brahmaputra-feature-importance.png" alt="Feature importance chart for the Brahmaputra Basin model" class="w-full h-72 object-cover">
+                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra feature importance showing strong dependence on current and previous SAR lake area.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <a href="index.html#projects" class="inline-flex items-center text-indigo-600 hover:underline font-semibold">&larr; Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="current-year"></span> Sunil Kumar. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
