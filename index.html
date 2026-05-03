@@ -69,9 +69,21 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background-color: #111827;
-            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
-            background-size: 2rem 2rem;
+            background-color: #0f172a;
+            background-image:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.96) 58%, rgba(15, 76, 92, 0.9)),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.72));
+            background-size: cover;
+        }
+        .hero-image-grid {
+            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-rows: 11rem 11rem;
+        }
+        @media (max-width: 640px) {
+            .hero-image-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 8rem 8rem;
+            }
         }
         /* Styles for the Back to Top button */
         #to-top-button {
@@ -135,19 +147,66 @@
     </header>
 
     <main>
-        <section id="home" class="hero-bg text-white py-10 md:py-16">
-            <div class="container mx-auto px-6 text-center">
-                <img src="profile.webp" alt="Headshot of Sunil Kumar, a civil engineering researcher" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover mx-auto mb-6 border-4 border-white/20 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/128x128/FFFFFF/333333?text=SK';">
-                <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-4">Hi, I'm Sunil Kumar</h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">Using advanced simulation and research to design more efficient and resilient urban water systems.</p>
-                <a href="#projects" class="bg-indigo-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition duration-300 transform hover:scale-105 shadow-lg">View My Work</a>
+        <section id="home" class="hero-bg text-white py-12 md:py-16 lg:py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+                    <div class="text-center lg:text-left">
+                        <p class="text-base md:text-lg font-semibold text-cyan-100 mb-3">PhD Scholar in Hydraulics, IIT Gandhinagar</p>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-5">Sunil Kumar</h1>
+                        <p class="text-lg md:text-xl text-slate-100 leading-relaxed max-w-3xl mx-auto lg:mx-0 mb-6">
+                            Translating hydraulic research into design insight for safer drainage structures, river systems, and urban water infrastructure.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto lg:mx-0 mb-8">
+                            <div class="border border-white/10 bg-slate-950/35 px-3 py-3 rounded-lg">
+                                <p class="text-base font-semibold">CFD</p>
+                                <p class="text-sm text-slate-200">Hydraulics</p>
+                            </div>
+                            <div class="border border-white/10 bg-slate-950/35 px-3 py-3 rounded-lg">
+                                <p class="text-base font-semibold">Vortex</p>
+                                <p class="text-sm text-slate-200">Drop shafts</p>
+                            </div>
+                            <div class="border border-white/10 bg-slate-950/35 px-3 py-3 rounded-lg">
+                                <p class="text-base font-semibold">GIS</p>
+                                <p class="text-sm text-slate-200">River basins</p>
+                            </div>
+                            <div class="border border-white/10 bg-slate-950/35 px-3 py-3 rounded-lg">
+                                <p class="text-base font-semibold">WSUD</p>
+                                <p class="text-sm text-slate-200">Urban water</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                            <a href="#projects" class="w-full sm:w-auto bg-cyan-400 text-slate-950 px-8 py-3 rounded-lg text-base font-semibold hover:bg-cyan-300 transition duration-300 shadow-lg">View Research</a>
+                            <a href="Sunil_CV.pdf" target="_blank" class="w-full sm:w-auto border border-white/25 bg-slate-950/30 text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-slate-950 transition duration-300 shadow-lg">Download CV</a>
+                            <a href="#contact" class="w-full sm:w-auto border border-white/25 bg-slate-950/30 text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-slate-950 transition duration-300 shadow-lg">Collaborate</a>
+                        </div>
+                    </div>
+
+                    <div class="max-w-xl mx-auto lg:mx-0 w-full">
+                        <div class="grid hero-image-grid gap-3">
+                            <figure class="row-span-2 relative overflow-hidden rounded-lg border border-white/10 bg-slate-950/30 shadow-2xl">
+                                <img src="profile.webp" alt="Headshot of Sunil Kumar, a civil engineering researcher" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/420x520/0F172A/FFFFFF?text=Sunil+Kumar';">
+                                <figcaption class="absolute inset-x-0 bottom-0 bg-slate-950/75 px-4 py-3 text-sm text-slate-100">
+                                    Civil Engineering, IIT Gandhinagar
+                                </figcaption>
+                            </figure>
+                            <figure class="relative overflow-hidden rounded-lg border border-white/10 bg-slate-950/30 shadow-xl">
+                                <img src="assets/chichlik/chichlik-project-collage.jpg" alt="CFD visualization and project collage for vortex drop shaft research" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/320x176/1E40AF/FFFFFF?text=CFD+Hydraulics';">
+                                <figcaption class="absolute inset-x-0 bottom-0 bg-slate-950/70 px-3 py-2 text-xs font-semibold text-slate-100">Vortex drop shaft CFD</figcaption>
+                            </figure>
+                            <figure class="relative overflow-hidden rounded-lg border border-white/10 bg-slate-950/30 shadow-xl">
+                                <img src="assets/cnarmada/cnarmada-project-collage.jpg" alt="River basin planning project collage for cNarmada" class="h-full w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/320x176/14532D/FFFFFF?text=River+Basin+Planning';">
+                                <figcaption class="absolute inset-x-0 bottom-0 bg-slate-950/70 px-3 py-2 text-xs font-semibold text-slate-100">River basin systems</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="py-4 bg-slate-900 text-white">
             <div class="container mx-auto px-6">
                 <p class="text-center text-base md:text-lg text-slate-200 max-w-5xl mx-auto">
-                    Working across CFD hydraulics, river basin planning, urban water systems, geospatial hazard assessment, and engineering consultancy for water infrastructure.
+                    Research and project work across hydraulic structures, river basin planning, urban water systems, geospatial hazard assessment, and engineering consultancy for water infrastructure.
                 </p>
             </div>
         </section>
@@ -640,7 +699,7 @@
                 <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
                     <div class="md:w-1/2">
                         <p class="text-gray-300 mb-8 text-center md:text-left">
-                            Open to new opportunities and collaborations! Reach out with projects, questions, or just to say hi. Email me or use the form below.
+                            Available for research collaboration, academic discussion, and applied water infrastructure projects. Email me directly or use the form below.
                         </p>
                         <form id="contact-form" action="https://formspree.io/f/xeozkqky" method="POST" class="space-y-4">
                             <div>
