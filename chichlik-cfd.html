@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,18 +7,15 @@
     <link rel="canonical" href="https://sunilkumardhayal.github.io/chichlik-cfd.html">
     <meta property="og:title" content="Chichlik Pumped Storage Project CFD Analysis - Sunil Kumar">
     <meta property="og:description" content="FLOW-3D HYDRO CFD analysis of reservoir intake operating conditions, free-surface response, pressure distribution, and anti-vortex beam performance.">
-    <meta property="og:image" content="https://sunilkumardhayal.github.io/assets/chichlik/chichlik-project-collage.jpg">
+    <meta property="og:image" content="https://sunilkumardhayal.github.io/assets/optimized/chichlik-project-collage.webp">
     <meta property="og:url" content="https://sunilkumardhayal.github.io/chichlik-cfd.html">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chichlik Pumped Storage Project CFD Analysis - Sunil Kumar">
     <meta name="twitter:description" content="End-to-end FLOW-3D HYDRO CFD analysis for pumped storage reservoir intake hydraulics.">
-    <meta name="twitter:image" content="https://sunilkumardhayal.github.io/assets/chichlik/chichlik-project-collage.jpg">
+    <meta name="twitter:image" content="https://sunilkumardhayal.github.io/assets/optimized/chichlik-project-collage.webp">
     <title>Chichlik Pumped Storage Project CFD Analysis - Sunil Kumar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tailwind-build.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
@@ -45,7 +42,7 @@
                             Guided by <a href="https://iitgn.ac.in/faculty/civil/fac-pranab" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white font-semibold">Prof. Pranab Kumar Mohapatra</a>.
                         </p>
                     </div>
-                    <img src="assets/chichlik/chichlik-project-collage.jpg" alt="Nine-panel collage of Chichlik pumped storage reservoir CFD outputs" class="rounded-lg border border-slate-800 shadow-2xl">
+                    <img src="assets/optimized/chichlik-project-collage.webp" alt="Nine-panel collage of Chichlik pumped storage reservoir CFD outputs" class="rounded-lg border border-slate-800 shadow-2xl" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -100,5 +97,13 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+</script>
 </body>
 </html>
+
