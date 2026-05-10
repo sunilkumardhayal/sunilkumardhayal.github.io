@@ -1,4 +1,4 @@
-const CACHE_NAME = "sunil-portfolio-v2";
+const CACHE_NAME = "sunil-portfolio-v3";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -32,6 +32,20 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  const acceptsHtml = event.request.headers.get("accept")?.includes("text/html");
+  if (event.request.mode === "navigate" || acceptsHtml) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then((cached) => {
