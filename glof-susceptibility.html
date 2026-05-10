@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,114 +17,139 @@
     <title>GLOF Susceptibility Mapping - Sunil Kumar</title>
     <link rel="stylesheet" href="css/tailwind-build.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        body { font-family: 'Inter', sans-serif; }
+        .glof-hero {
+            background-image:
+                linear-gradient(90deg, rgba(6, 19, 34, 0.96), rgba(8, 47, 73, 0.84) 54%, rgba(15, 23, 42, 0.72)),
+                url('assets/optimized/glof-hero-collage.webp');
+            background-position: center;
+            background-size: cover;
+        }
+        .figure-frame {
+            background: linear-gradient(180deg, #ffffff, #f8fafc);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
-    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
-        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <a href="index.html#home" class="text-xl sm:text-2xl font-bold text-gray-900">Sunil Kumar</a>
-            <nav class="hidden lg:flex space-x-8 items-center">
-                <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition">About</a>
-                <a href="index.html#projects" class="text-gray-600 hover:text-indigo-600 transition">Projects</a>
-                <a href="index.html#skills" class="text-gray-600 hover:text-indigo-600 transition">Skills</a>
-                <a href="index.html#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition shadow">Contact</a>
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-lg">
+        <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6">
+            <a href="index.html" class="text-lg font-bold text-slate-950">Sunil Kumar</a>
+            <nav class="flex items-center gap-3 text-sm font-semibold">
+                <a href="index.html#projects" class="rounded-lg border border-slate-200 px-4 py-2 text-slate-700 transition hover:border-teal-300 hover:text-teal-700">Projects</a>
+                <a href="index.html#contact" class="hidden rounded-lg bg-slate-950 px-4 py-2 text-white shadow-sm transition hover:bg-teal-700 sm:inline-flex">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="text-white py-10 md:py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(5, 10, 25, 0.78), rgba(5, 10, 25, 0.82)), url('assets/optimized/glof-hero-collage.webp');">
-            <div class="container mx-auto px-4 sm:px-6">
-                <p class="text-teal-300 font-semibold mb-3">CE605 Remote Sensing of Land and Water Resources, 2026</p>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold max-w-5xl leading-tight mb-5">Assessment of GLOF Susceptibility Across Major Himalayan River Basins</h1>
-                <p class="text-lg text-gray-300 max-w-4xl mb-6">A remote sensing and machine learning study for mapping glacial lake outburst flood susceptibility across the Indus, Ganga, and Brahmaputra river basins.</p>
-                <div class="flex flex-wrap gap-3 text-sm">
-                    <a href="https://iitgn.ac.in/faculty/civil/fac-vimal" target="_blank" rel="noopener noreferrer" class="bg-white/10 border border-white/20 px-3 py-1 rounded-full hover:bg-white/20 transition">Guided by: Prof. Vimal Mishra</a>
-                    <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">Sunil Kumar and team</span>
-                    <span class="bg-white/10 border border-white/20 px-3 py-1 rounded-full">17 April 2026</span>
+        <section class="glof-hero text-white">
+            <div class="container mx-auto min-h-[calc(100vh-72px)] px-4 py-12 sm:px-6 lg:py-16">
+                <div class="flex min-h-[calc(100vh-168px)] max-w-5xl flex-col justify-center">
+                    <a href="index.html#projects" class="mb-6 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-teal-100 transition hover:bg-white/15">&larr; Back to Projects</a>
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-teal-200">Remote Sensing | GIS | Machine Learning</p>
+                    <h1 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Assessment of GLOF Susceptibility Across Major Himalayan River Basins</h1>
+                    <p class="mt-5 max-w-4xl text-lg leading-relaxed text-slate-200">A remote sensing and machine learning study for mapping glacial lake outburst flood susceptibility across the Indus, Ganga, and Brahmaputra river basins.</p>
+                    <div class="mt-7 flex flex-wrap gap-3 text-sm">
+                        <a href="https://iitgn.ac.in/faculty/civil/fac-vimal" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-teal-100 transition hover:bg-white/15">Guided by Prof. Vimal Mishra</a>
+                        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-slate-100">Sunil Kumar and team</span>
+                        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-slate-100">17 April 2026</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10">
-                <div class="lg:col-span-2">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Project Overview</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">The project examined how glaciological, topographical, and climatic controls influence glacial lake outburst flood susceptibility across major Himalayan basins. It combined multi-source remote sensing data with a machine learning framework to classify and map basin-wise susceptibility patterns.</p>
-                    <p class="text-gray-600 leading-relaxed">The analysis focused on lake dynamics, glacier proximity, topography, rainfall, temperature, and freeze-thaw indicators, with the final output designed to support prioritization of potentially hazardous glacial lakes.</p>
+        <section class="bg-white py-16">
+            <div class="container mx-auto grid grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[1.45fr_0.75fr]">
+                <div>
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Project Overview</p>
+                    <h2 class="mb-4 text-3xl font-bold text-slate-950">Basin-Scale Susceptibility Assessment</h2>
+                    <div class="space-y-4 leading-relaxed text-slate-600">
+                        <p>The project examined how glaciological, topographical, and climatic controls influence glacial lake outburst flood susceptibility across major Himalayan basins.</p>
+                        <p>It combined multi-source remote sensing data with a machine learning framework to classify and map basin-wise susceptibility patterns, supporting prioritization of potentially hazardous glacial lakes.</p>
+                    </div>
                 </div>
-                <aside class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                    <h3 class="font-bold text-gray-900 mb-4">Study Scale</h3>
-                    <dl class="space-y-3 text-sm">
+                <aside class="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                    <h3 class="mb-5 text-xl font-bold text-slate-950">Study Scale</h3>
+                    <dl class="space-y-4 text-sm">
                         <div>
-                            <dt class="text-gray-500">Total glacial lakes assessed</dt>
-                            <dd class="font-semibold text-gray-900">19,284</dd>
+                            <dt class="text-slate-500">Total glacial lakes assessed</dt>
+                            <dd class="text-2xl font-bold text-slate-950">19,284</dd>
                         </div>
                         <div>
-                            <dt class="text-gray-500">Major basins</dt>
-                            <dd class="font-semibold text-gray-900">Indus, Ganga, Brahmaputra</dd>
+                            <dt class="text-slate-500">Major basins</dt>
+                            <dd class="font-semibold text-slate-950">Indus, Ganga, Brahmaputra</dd>
                         </div>
                         <div>
-                            <dt class="text-gray-500">Lakes greater than 5 ha</dt>
-                            <dd class="font-semibold text-gray-900">4,984</dd>
+                            <dt class="text-slate-500">Lakes greater than 5 ha</dt>
+                            <dd class="font-semibold text-slate-950">4,984</dd>
                         </div>
                     </dl>
                 </aside>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Data And Method</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-2">Lake Dynamics</h3>
-                        <p class="text-sm text-gray-600">Sentinel-1 SAR lake area, lake expansion, and shape indicators.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-2">Topography</h3>
-                        <p class="text-sm text-gray-600">ALOS World 3D DEM, elevation gradients, terrain slope, aspect, and relief.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-2">Climate</h3>
-                        <p class="text-sm text-gray-600">CHIRPS rainfall and CPC/MODIS temperature indicators, including extremes.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-2">Machine Learning</h3>
-                        <p class="text-sm text-gray-600">Basin-wise modelling with XGBoost-style susceptibility prediction and validation.</p>
-                    </div>
+        <section class="bg-slate-100 py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Data And Method</p>
+                    <h2 class="text-3xl font-bold text-slate-950">Inputs Used For Basin-Wise Modelling</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Lake Dynamics</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Sentinel-1 SAR lake area, lake expansion, and shape indicators.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Topography</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">ALOS World 3D DEM, elevation gradients, terrain slope, aspect, and relief.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Climate</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">CHIRPS rainfall and CPC/MODIS temperature indicators, including extremes.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Machine Learning</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Basin-wise modelling with XGBoost-style susceptibility prediction and validation.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Basin Maps</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/indus-basin-dem.webp" alt="Indus River Basin DEM and drainage network" class="w-full h-64 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Indus River Basin DEM and drainage network.</figcaption>
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="mb-8">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Basin Maps</p>
+                    <h2 class="text-3xl font-bold text-slate-950">DEM And Drainage Context</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/indus-basin-dem.webp" alt="Indus River Basin DEM and drainage network" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Indus River Basin DEM and drainage network.</figcaption>
                     </figure>
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/ganga-basin-dem.webp" alt="Ganga River Basin DEM and drainage network" class="w-full h-64 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Ganga River Basin DEM and drainage network.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/ganga-basin-dem.webp" alt="Ganga River Basin DEM and drainage network" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Ganga River Basin DEM and drainage network.</figcaption>
                     </figure>
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/brahmaputra-basin-dem.webp" alt="Brahmaputra River Basin DEM and drainage network" class="w-full h-64 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra River Basin DEM and drainage network.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/brahmaputra-basin-dem.webp" alt="Brahmaputra River Basin DEM and drainage network" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Brahmaputra River Basin DEM and drainage network.</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <section class="bg-slate-100 py-16">
+            <div class="container mx-auto grid grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-2">
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-5">Key Results</h2>
-                    <ul class="space-y-3 text-gray-600">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Key Results</p>
+                    <h2 class="mb-5 text-3xl font-bold text-slate-950">Model Outputs</h2>
+                    <ul class="space-y-3 leading-relaxed text-slate-600">
                         <li>Developed basin-wise GLOF susceptibility maps using remote sensing and machine learning.</li>
                         <li>Model performance was strong across basins, with R2 values approximately between 0.75 and 0.91.</li>
                         <li>Lake area change and glacier proximity emerged as dominant drivers across all basins.</li>
@@ -132,116 +157,141 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-5">Basin-Specific Controls</h2>
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Basin-Specific Controls</p>
+                    <h2 class="mb-5 text-3xl font-bold text-slate-950">Important Drivers</h2>
                     <div class="space-y-4">
-                        <div class="bg-white border border-gray-200 rounded-lg p-5">
-                            <h3 class="font-semibold text-gray-900">Indus</h3>
-                            <p class="text-sm text-gray-600 mt-1">Rainfall and freeze conditions were important drivers.</p>
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg p-5">
-                            <h3 class="font-semibold text-gray-900">Brahmaputra</h3>
-                            <p class="text-sm text-gray-600 mt-1">Temperature and thaw dynamics showed strong influence.</p>
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg p-5">
-                            <h3 class="font-semibold text-gray-900">Ganga</h3>
-                            <p class="text-sm text-gray-600 mt-1">Elevation and freeze conditions were key basin-specific controls.</p>
-                        </div>
+                        <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                            <h3 class="font-semibold text-slate-950">Indus</h3>
+                            <p class="mt-1 text-sm text-slate-600">Rainfall and freeze conditions were important drivers.</p>
+                        </article>
+                        <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                            <h3 class="font-semibold text-slate-950">Brahmaputra</h3>
+                            <p class="mt-1 text-sm text-slate-600">Temperature and thaw dynamics showed strong influence.</p>
+                        </article>
+                        <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                            <h3 class="font-semibold text-slate-950">Ganga</h3>
+                            <p class="mt-1 text-sm text-slate-600">Elevation and freeze conditions were key basin-specific controls.</p>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Susceptibility Outputs</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/indus-susceptibility-map.webp" alt="Indus Basin glacial lake susceptibility map" class="w-full h-80 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Indus Basin susceptibility map showing classified glacial lakes from low to very high susceptibility.</figcaption>
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Susceptibility Outputs</p>
+                    <h2 class="text-3xl font-bold text-slate-950">Readable Maps Without Cropping</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/indus-susceptibility-map.webp" alt="Indus Basin glacial lake susceptibility map" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Indus Basin susceptibility map showing classified glacial lakes from low to very high susceptibility.</figcaption>
                     </figure>
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/ganga-susceptibility-map.webp" alt="Ganga Basin glacial lake susceptibility map" class="w-full h-80 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Ganga Basin susceptibility map linking lake expansion risk with elevation, freeze conditions, and terrain controls.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/ganga-susceptibility-map.webp" alt="Ganga Basin glacial lake susceptibility map" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Ganga Basin susceptibility map linking lake expansion risk with elevation, freeze conditions, and terrain controls.</figcaption>
                     </figure>
-                    <figure class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/brahmaputra-susceptibility-map.webp" alt="Brahmaputra Basin glacial lake susceptibility map" class="w-full h-80 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra Basin susceptibility map highlighting spatial clusters of potentially hazardous glacial lakes.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/brahmaputra-susceptibility-map.webp" alt="Brahmaputra Basin glacial lake susceptibility map" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Brahmaputra Basin susceptibility map highlighting spatial clusters of potentially hazardous glacial lakes.</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Model Evidence</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-3">Indus Basin</h3>
-                        <p class="text-sm text-gray-600">Validation R2: 0.847</p>
-                        <p class="text-sm text-gray-600">Test R2: 0.867</p>
-                        <p class="text-sm text-gray-600 mt-3">Important controls included area trend, glacier proximity, slope, freeze trend, thaw trend, and rainfall trend.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-3">Brahmaputra Basin</h3>
-                        <p class="text-sm text-gray-600">Validation R2: 0.906</p>
-                        <p class="text-sm text-gray-600">Test R2: 0.820</p>
-                        <p class="text-sm text-gray-600 mt-3">Important controls included area change, glacier proximity, slope, thaw dynamics, temperature trend, and rainfall trend.</p>
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-5">
-                        <h3 class="font-semibold text-gray-900 mb-3">Ganga Basin</h3>
-                        <p class="text-sm text-gray-600">Validation R2: 0.822</p>
-                        <p class="text-sm text-gray-600">Test R2: 0.748</p>
-                        <p class="text-sm text-gray-600 mt-3">Important controls included area change, glacier proximity, elevation, terrain slope, freeze conditions, and thaw dynamics.</p>
-                    </div>
+        <section class="bg-slate-100 py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Model Evidence</p>
+                    <h2 class="text-3xl font-bold text-slate-950">Validation And Feature Importance</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/indus-validation-observed-predicted.webp" alt="Observed versus predicted lake area validation plot for the Indus Basin model" class="w-full h-72 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Validation lake-area series comparing observed and predicted glacial lake area.</figcaption>
+                <div class="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-3 font-semibold text-slate-950">Indus Basin</h3>
+                        <p class="text-sm text-slate-600">Validation R2: 0.847</p>
+                        <p class="text-sm text-slate-600">Test R2: 0.867</p>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">Important controls included area trend, glacier proximity, slope, freeze trend, thaw trend, and rainfall trend.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-3 font-semibold text-slate-950">Brahmaputra Basin</h3>
+                        <p class="text-sm text-slate-600">Validation R2: 0.906</p>
+                        <p class="text-sm text-slate-600">Test R2: 0.820</p>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">Important controls included area change, glacier proximity, slope, thaw dynamics, temperature trend, and rainfall trend.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-3 font-semibold text-slate-950">Ganga Basin</h3>
+                        <p class="text-sm text-slate-600">Validation R2: 0.822</p>
+                        <p class="text-sm text-slate-600">Test R2: 0.748</p>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600">Important controls included area change, glacier proximity, elevation, terrain slope, freeze conditions, and thaw dynamics.</p>
+                    </article>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex aspect-[16/9] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/indus-validation-observed-predicted.webp" alt="Observed versus predicted lake area validation plot for the Indus Basin model" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Validation lake-area series comparing observed and predicted glacial lake area.</figcaption>
                     </figure>
-                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/indus-testing-observed-predicted.webp" alt="Observed versus predicted lake area testing plot for the Indus Basin model" class="w-full h-72 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Testing lake-area series used as an independent check on model performance.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex aspect-[16/9] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/indus-testing-observed-predicted.webp" alt="Observed versus predicted lake area testing plot for the Indus Basin model" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Testing lake-area series used as an independent check on model performance.</figcaption>
                     </figure>
-                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/indus-feature-importance.webp" alt="Feature importance chart for the Indus Basin model" class="w-full h-72 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Indus feature importance showing lake-area history as a dominant predictor.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/indus-feature-importance.webp" alt="Feature importance chart for the Indus Basin model" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Indus feature importance showing lake-area history as a dominant predictor.</figcaption>
                     </figure>
-                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/ganga-feature-importance.webp" alt="Feature importance chart for the Ganga Basin model" class="w-full h-72 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Ganga feature importance showing the combined effect of lake area, seasonality, and terrain variables.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="flex aspect-[4/3] items-center justify-center bg-slate-50 p-3">
+                            <img src="assets/optimized/ganga-feature-importance.webp" alt="Feature importance chart for the Ganga Basin model" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Ganga feature importance showing the combined effect of lake area, seasonality, and terrain variables.</figcaption>
                     </figure>
-                    <figure class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/optimized/brahmaputra-feature-importance.webp" alt="Feature importance chart for the Brahmaputra Basin model" class="w-full h-72 object-cover" decoding="async" loading="lazy" fetchpriority="low">
-                        <figcaption class="p-4 text-sm text-gray-600">Brahmaputra feature importance showing strong dependence on current and previous SAR lake area.</figcaption>
+                    <figure class="figure-frame overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:col-span-2">
+                        <div class="flex aspect-[16/9] items-center justify-center bg-slate-50 p-3 lg:aspect-[21/9]">
+                            <img src="assets/optimized/brahmaputra-feature-importance.webp" alt="Feature importance chart for the Brahmaputra Basin model" class="max-h-full w-full object-contain" decoding="async" loading="lazy" fetchpriority="low">
+                        </div>
+                        <figcaption class="border-t border-slate-200 p-4 text-sm text-slate-600">Brahmaputra feature importance showing strong dependence on current and previous SAR lake area.</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
 
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-6">
-                <a href="index.html#projects" class="inline-flex items-center text-indigo-600 hover:underline font-semibold">&larr; Back to Projects</a>
+        <section class="bg-white py-12">
+            <div class="container mx-auto flex flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal-700">Next</p>
+                    <h2 class="text-2xl font-bold text-slate-950">Return to the full research portfolio</h2>
+                </div>
+                <a href="index.html#projects" class="inline-flex rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-700">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="current-year"></span> Sunil Kumar. All rights reserved.</p>
-        </div>
+    <footer class="border-t border-slate-200 bg-slate-950 py-8 text-center text-slate-400">
+        <p>&copy; <span id="current-year"></span> Sunil Kumar. All rights reserved.</p>
     </footer>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
-}
-</script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    </script>
 </body>
 </html>
-

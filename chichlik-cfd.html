@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,92 +18,123 @@
     <link rel="stylesheet" href="css/tailwind-build.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .project-hero {
+            background:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(8, 47, 73, 0.92) 58%, rgba(6, 78, 59, 0.88)),
+                radial-gradient(circle at top right, rgba(14, 165, 233, 0.24), transparent 32%);
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
-    <header class="bg-slate-950/95 border-b border-slate-800 sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
-            <a href="index.html#projects" class="text-sm font-semibold text-sky-300 hover:text-white">&larr; Back to Projects</a>
-            <a href="index.html" class="text-lg font-bold text-white">Sunil Kumar</a>
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-lg">
+        <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-4 sm:px-6">
+            <a href="index.html" class="text-lg font-bold text-slate-950">Sunil Kumar</a>
+            <nav class="flex items-center gap-3 text-sm font-semibold">
+                <a href="index.html#projects" class="rounded-lg border border-slate-200 px-4 py-2 text-slate-700 transition hover:border-sky-300 hover:text-sky-700">Projects</a>
+                <a href="index.html#contact" class="hidden rounded-lg bg-slate-950 px-4 py-2 text-white shadow-sm transition hover:bg-sky-700 sm:inline-flex">Contact</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <section class="py-10 md:py-20">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <p class="text-sm font-semibold text-sky-300 mb-3">Consultancy Project, 2025 - 2026</p>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5">Chichlik Pumped Storage Project CFD Analysis</h1>
-                        <p class="text-lg text-slate-300 leading-relaxed">
-                            CFD-based hydraulic assessment of reservoir intake operating conditions, focused on velocity fields, free-surface behavior, pressure distribution, Froude number, streamline patterns, and anti-vortex beam performance.
-                        </p>
-                        <p class="text-slate-400 mt-5">
-                            Guided by <a href="https://iitgn.ac.in/faculty/civil/fac-pranab" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white font-semibold">Prof. Pranab Kumar Mohapatra</a>.
-                        </p>
+        <section class="project-hero text-white">
+            <div class="container mx-auto grid min-h-[calc(100vh-72px)] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:py-16">
+                <div>
+                    <a href="index.html#projects" class="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-sky-100 transition hover:bg-white/15">&larr; Back to Projects</a>
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-sky-200">Consultancy Project | 2025 - 2026</p>
+                    <h1 class="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Chichlik Pumped Storage Project CFD Analysis</h1>
+                    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-slate-200">
+                        CFD-based hydraulic assessment of reservoir intake operation, including velocity fields, free-surface behavior, pressure distribution, Froude response, streamline patterns, and anti-vortex beam performance.
+                    </p>
+                    <div class="mt-7 flex flex-wrap gap-3 text-sm">
+                        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-slate-100">FLOW-3D HYDRO</span>
+                        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-slate-100">Civil 3D</span>
+                        <span class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-slate-100">ParaView</span>
                     </div>
-                    <img src="assets/optimized/chichlik-project-collage.webp" alt="Nine-panel collage of Chichlik pumped storage reservoir CFD outputs" class="rounded-lg border border-slate-800 shadow-2xl" decoding="async" fetchpriority="high">
+                    <p class="mt-7 text-slate-300">
+                        Guided by <a href="https://iitgn.ac.in/faculty/civil/fac-pranab" target="_blank" rel="noopener noreferrer" class="font-semibold text-sky-200 transition hover:text-white">Prof. Pranab Kumar Mohapatra</a>.
+                    </p>
+                </div>
+
+                <figure class="overflow-hidden rounded-xl border border-white/15 bg-white/10 shadow-2xl">
+                    <img src="assets/optimized/chichlik-project-collage.webp" alt="Nine-panel collage of Chichlik pumped storage reservoir CFD outputs" class="h-full w-full object-cover" decoding="async" fetchpriority="high">
+                    <figcaption class="border-t border-white/10 bg-slate-950/55 px-4 py-3 text-sm text-slate-300">Public-safe CFD result collage for reservoir intake hydraulic assessment.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <article class="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                        <p class="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-sky-700">Role</p>
+                        <h2 class="mb-3 text-xl font-bold text-slate-950">End-To-End CFD Analysis</h2>
+                        <p class="leading-relaxed text-slate-600">Prepared CFD-ready geometry, defined operating cases, reviewed simulation behavior, post-processed hydraulic outputs, and prepared technical reporting for upper and lower reservoir assessments.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                        <p class="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-sky-700">Method</p>
+                        <h2 class="mb-3 text-xl font-bold text-slate-950">Case-Based Comparison</h2>
+                        <p class="leading-relaxed text-slate-600">Compared generation and pumping cases using velocity contours, streamlines, cross sections, free-surface elevation, pressure fields, and Froude number outputs.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                        <p class="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-sky-700">Outcome</p>
+                        <h2 class="mb-3 text-xl font-bold text-slate-950">Engineering Interpretation</h2>
+                        <p class="leading-relaxed text-slate-600">Organized complex hydraulic behavior into public-safe visuals and decision-ready summaries for intake performance and vortex-control review.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="py-14 bg-white text-slate-900">
+        <section class="bg-slate-100 py-16">
             <div class="container mx-auto px-4 sm:px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="border border-slate-200 rounded-lg p-6">
-                        <h2 class="text-xl font-bold mb-3">My Role</h2>
-                        <p class="text-slate-600">Performed the end-to-end Computational Fluid Dynamics analysis in FLOW-3D HYDRO, including CFD-ready geometry preparation, operating-case setup, simulation analysis, post-processing of hydraulic results, and technical reporting for upper and lower reservoir assessments.</p>
-                    </div>
-                    <div class="border border-slate-200 rounded-lg p-6">
-                        <h2 class="text-xl font-bold mb-3">Methods</h2>
-                        <p class="text-slate-600">Compared generation and pumping cases using velocity contours, streamlines, cross-sectional plots, free-surface elevation, pressure fields, and Froude number outputs.</p>
-                    </div>
-                    <div class="border border-slate-200 rounded-lg p-6">
-                        <h2 class="text-xl font-bold mb-3">Tools</h2>
-                        <p class="text-slate-600">FLOW-3D HYDRO, Civil 3D, CAD geometry preparation, ParaView post-processing, and technical documentation workflows.</p>
-                    </div>
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-sky-700">Technical Highlights</p>
+                    <h2 class="text-3xl font-bold text-slate-950">Public-Safe Summary Of The Work</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Reservoir Intake Hydraulics</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Evaluated how flow enters and distributes near reservoir intake zones under selected operating combinations.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Anti-Vortex Beam Review</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Compared flow behavior with design interventions intended to reduce adverse vortex formation near intakes.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Hydraulic Visualization</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Produced visuals for velocity, pressure, free surface, Froude number, and streamline-based assessment.</p>
+                    </article>
+                    <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <h3 class="mb-2 font-semibold text-slate-950">Technical Reporting</h3>
+                        <p class="text-sm leading-relaxed text-slate-600">Compiled operating-case findings into structured reports for engineering review while keeping sensitive project details private.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="py-14 bg-slate-100 text-slate-900">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h2 class="text-3xl font-bold text-center mb-10">Public-Safe Technical Highlights</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <div class="bg-white rounded-lg p-5 border border-slate-200">
-                        <h3 class="font-semibold mb-2">Reservoir Intake Hydraulics</h3>
-                        <p class="text-sm text-slate-600">Evaluated how flow enters and distributes near reservoir intake zones under selected operating combinations.</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-5 border border-slate-200">
-                        <h3 class="font-semibold mb-2">Anti-Vortex Beam Review</h3>
-                        <p class="text-sm text-slate-600">Compared flow behavior with design interventions intended to reduce adverse vortex formation near intakes.</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-5 border border-slate-200">
-                        <h3 class="font-semibold mb-2">Case-Based Reporting</h3>
-                        <p class="text-sm text-slate-600">Organized results across multiple generation and pumping scenarios for engineering interpretation.</p>
-                    </div>
-                    <div class="bg-white rounded-lg p-5 border border-slate-200">
-                        <h3 class="font-semibold mb-2">Visualization</h3>
-                        <p class="text-sm text-slate-600">Produced technical visuals for velocity, pressure, free surface, Froude number, and streamline-based assessment.</p>
-                    </div>
+        <section class="bg-white py-12">
+            <div class="container mx-auto flex flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-sky-700">Next</p>
+                    <h2 class="text-2xl font-bold text-slate-950">Return to the full research portfolio</h2>
                 </div>
+                <a href="index.html#projects" class="inline-flex rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-slate-400">
+    <footer class="border-t border-slate-200 bg-slate-950 py-8 text-center text-slate-400">
         <p>&copy; <span id="current-year"></span> Sunil Kumar. All rights reserved.</p>
     </footer>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
-}
-</script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+    </script>
 </body>
 </html>
-

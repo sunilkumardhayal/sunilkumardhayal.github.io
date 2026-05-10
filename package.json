@@ -7,7 +7,7 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test": "jest --detectOpenHandles",
-    "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind-build.css --content ./index.html ./chichlik-cfd.html ./glof-susceptibility.html --minify",
+    "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind-build.css --content \"./*.html\" --minify",
     "optimize:images": "node scripts/optimize-images.js",
     "build:static": "npm run optimize:images && npm run build:css"
   },
