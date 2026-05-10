@@ -1,4 +1,4 @@
-const CACHE_NAME = "sunil-portfolio-v3";
+const CACHE_NAME = "sunil-portfolio-v4";
 const CORE_ASSETS = [
   "./",
   "./index.html",
