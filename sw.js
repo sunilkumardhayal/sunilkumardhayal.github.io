@@ -1,4 +1,4 @@
-const CACHE_NAME = "sunil-portfolio-v5";
+const CACHE_NAME = "sunil-portfolio-v6";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -59,4 +59,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
