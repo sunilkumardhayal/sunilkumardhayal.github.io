@@ -1,0 +1,93 @@
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    transition: background-color 0.5s;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+.header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background: #333;
+}
+
+.nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav a:hover {
+    background-color: #575757;
+}
+
+.section {
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+/* Dark Mode */
+:root {
+    --background-dark: #121212;
+    --background-light: #ffffff;
+    --text-dark: #e0e0e0;
+    --text-light: #000000;
+}
+
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Dark mode toggle styles */
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.toggle:hover {
+    background: #45a049;
+}

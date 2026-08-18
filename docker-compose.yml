@@ -1,0 +1,12 @@
+db:
+    image: postgres:15-alpine
+    container_name: scholar_os_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=scholar_admin
+      - POSTGRES_PASSWORD=securepassword
+      - POSTGRES_DB=scholar_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d/ # <--- ADD THIS LINE

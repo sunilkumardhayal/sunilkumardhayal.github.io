@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Scholar OS Enterprise API",
+    "version": "1.0.0",
+    "description": "RESTful API for IIT Gandhinagar campus logistics and scholar operations."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "Local Development Server"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "System Health Check",
+        "description": "Returns the operational status of the API.",
+        "responses": {
+          "200": {
+            "description": "System Operations Nominal"
+          }
+        }
+      }
+    },
+    "/api/v1/transit": {
+      "get": {
+        "summary": "Get all transit schedules",
+        "description": "Retrieves the complete database of 56-Seater, 29-Seater, and EECO shuttle timings.",
+        "responses": {
+          "200": {
+            "description": "A JSON array of transit routes."
+          }
+        }
+      }
+    },
+    "/api/v1/dining/today": {
+      "get": {
+        "summary": "Get today's nutrition matrix",
+        "description": "Dynamically pulls the mess menu based on the current day of the week.",
+        "responses": {
+          "200": {
+            "description": "A JSON object containing breakfast, lunch, snacks, and dinner."
+          }
+        }
+      }
+    }
+  }
+}
